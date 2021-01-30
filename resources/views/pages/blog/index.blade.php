@@ -8,6 +8,11 @@
                 <div class="card-header">{{ __('Blog') }}</div>
 
                 <div class="card-body">
+                    @forelse ($blogs as $blog)
+                        {{ $blog }}
+                    @empty
+                        <h2>Data Kosong</h2>
+                    @endforelse
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -16,7 +21,7 @@
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                           <a href="{{ route('blog.creat') }}" class="btn btn-outline-secondary" type="button">Add</a>
-                </div>
+                     </div>
             </div>
         </div>
     </div>

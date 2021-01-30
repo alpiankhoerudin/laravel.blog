@@ -29,6 +29,7 @@
                             <input type="file" class="form-control-file" id="exampleFormControlFile1">
                           </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="{{ route('blog.index') }}" type="submit" class="btn btn-danger">Cancel</a>
                       </form>
                 </div>
             </div>
