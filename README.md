@@ -12,3 +12,10 @@ creat file docker-compose.yml
 docker ps
 docker kill $(docker ps)
 docker-compose up -d
+
+# git
+git add .
+git commit -m "pesan"
+git push
+
+

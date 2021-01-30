@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group (['prefix' => 'blog'], function () {
+    Route::get('/', 'BlogController@index')->name('blog.index');
+    Route::get('/creat', 'BlogController@create')->name('blog.creat');
+});
