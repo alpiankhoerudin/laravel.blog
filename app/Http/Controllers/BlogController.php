@@ -38,7 +38,12 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $blog = $request->all();
+        $blog['imgPath'] = 'storage/'.$request->file('imgPath')->store(
+            'assets/blog', 'public'
+        );
+        Blog::create($blog);
+        return redirect()->route('blog.index');
     }
 
     /**
