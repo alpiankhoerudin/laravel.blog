@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
@@ -77,7 +78,7 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -88,6 +89,18 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+    }
+      /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function delete($id)
+    {
+        DB::table('blogs')->where('id',$id)->delete();
+        return redirect()->back();
+
     }
 }
